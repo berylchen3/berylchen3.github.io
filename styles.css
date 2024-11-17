@@ -10,3 +10,15 @@
     background-color: #1e1e2f;
     z-index: -1;
 }
+
+#contact-modal p {
+    color: #4b4b4b;
+}
+
+#contact-modal a {
+    color: #5a3d99;
+}
+
+#contact-modal a:hover {
+    color: #7b5db3;
+}

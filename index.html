@@ -55,6 +55,45 @@
         a:hover {
             text-decoration: underline;
         }
+
+        #contact-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: black;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            border-radius: 8px;
+        }
+
+        #contact-modal button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact-modal button:hover {
+            background-color: #48b1f3;
+        }
+
+        #modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
     </style>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -75,9 +114,19 @@
             <li><a href="#about">about me</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="#projects">projects</a></li>
-            <li><a href="#contact">contact</a></li>
+            <!-- <li><a href="#contact">contact</a></li> -->
+            <li><a href="javascript:void(0);" onclick="showModal()">contact</a></li>
         </ul>
         <p>This website is still in progress! Please wait...</p>
+
+        <div id="modal-overlay" onclick="closeModal()"></div>
+        <div id="contact-modal">
+            <h2>Contact Me!</h2>
+            <p>Address: Kahlert School of Computing, Salt Lake City, UT</p>
+            <p>Email: wangbingying3@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/bingying-wang3/" target="_blank">View Profile</a></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
         <!-- <nav>
             <a href="#about">about me</a><br>
             <a href="#projects">projects</a><br>
@@ -135,6 +184,18 @@
                 },
                 "retina_detect": true
             });
+
+
+            function showModal() {
+            document.getElementById('contact-modal').style.display = 'block';
+            document.getElementById('modal-overlay').style.display = 'block';
+            }
+
+
+            function closeModal() {
+                document.getElementById('contact-modal').style.display = 'none';
+                document.getElementById('modal-overlay').style.display = 'none';
+            }
         </script>
 
     </header>
