@@ -29,3 +29,28 @@
     border-radius: 10px;
     margin-top: 10px;
 }
+
+.timeline {
+    position: relative;
+    margin: 30px 0;
+    padding-left: 40px;
+    border-left: 2px solid #6a5acd; /* verticle line for time line */
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #6a5acd;
+    margin-bottom: 5px;
+}
+
+.timeline-content {
+    background: #f4f4f4;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
