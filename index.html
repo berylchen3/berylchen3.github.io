@@ -7,11 +7,20 @@
     <style>
         body {
             /*background: rgb(47, 46, 46);*/
-            background: linear-gradient(135deg, #1e1e2f, #15151f);
+            /*background: linear-gradient(135deg, #1e1e2f, #15151f);*/
 
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             padding: 50px;
+            background-color: #1e1e2f;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #1e1e2f; /* a darker color background */
+            z-index: -1; /* make sure particles are behind those contents */
         }
 
         h1 {
@@ -54,8 +63,14 @@
             text-decoration: underline;
         }
     </style>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 </head>
 <body>
+
+    <div id="particles-js"></div>
+
     <h1>Bingying Wang</h1>
     <h2>CS student at University of Utah</h2>
 
@@ -75,6 +90,59 @@
             <a href="#projects">projects</a><br>
             <a href="#contact">contact</a>
         </nav> -->
+
+        <script>
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 100, /* Amount of particles */
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff" /* Color of particles */
+                    },
+                    "shape": {
+                        "type": "circle" /* Shape of particles */
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": true, /* The connection between particles */
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2 /* Speed of particles */
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse" /* When the mouse hovers, the particle avoids */
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push" /* When the mouse clicked, more particles occur */
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        </script>
 
     </header>
 </body>
