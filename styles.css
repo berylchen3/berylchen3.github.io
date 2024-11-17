@@ -2,3 +2,10 @@
     display: block;
     margin: 10px 0;
 } */
+
+h1 {
+    font-size: 4rem;
+    background: linear-gradient(90deg, #6a5acd, #48b1f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill
+}
