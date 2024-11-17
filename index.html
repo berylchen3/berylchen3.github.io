@@ -6,9 +6,45 @@
     <title>Bingying's Web Page</title>
     <style>
         body {
-            background: rgb(96, 92, 92);
+            /*background: rgb(47, 46, 46);*/
+            background: linear-gradient(135deg, #1e1e2f, #15151f);
+
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
+            padding: 50px;
+        }
+
+        h1, h2 {           
+            background: linear-gradient(90deg, #6a5acd, #48b1f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+
+        img {
+            width: 200px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none; /*delete the points before <li>*/
+            padding: 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+
+        a {
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -16,19 +52,23 @@
     <h1>Bingying Wang</h1>
     <h2>CS student at University of Utah</h2>
 
+    <img src="assets/image1.jpg" alt="Bingying's Photo">
+
     <header>
         <h1>Welcome to my personal website</h1>
         <ul>
             <li><a href="#about">about me</a></li>
+            <li><a href="#CV">CV</a></li>
             <li><a href="#projects">projects</a></li>
             <li><a href="#contact">contact</a></li>
         </ul>
-        <h2>Still working on the website...</h2>
+        <p>This website is still in progress! Please wait...</p>
         <!-- <nav>
             <a href="#about">about me</a><br>
             <a href="#projects">projects</a><br>
             <a href="#contact">contact</a>
         </nav> -->
+
     </header>
 </body>
 </html>
