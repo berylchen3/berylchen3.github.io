@@ -22,3 +22,10 @@
 #contact-modal a:hover {
     color: #7b5db3;
 }
+
+.about-photo {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
