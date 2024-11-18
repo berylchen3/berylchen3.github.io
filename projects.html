@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #1e1e2f;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .view-btn {
+            background: #6a5acd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .view-btn:hover {
+            background: #48b1f3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .modal a {
+            display: block;
+            margin-top: 10px;
+            color: #6a5acd;
+            text-decoration: none;
+        }
+
+        .modal-button {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 15px;
+            background-color: #6a5acd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .modal-button:hover {
+            background-color: #48b1f3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Projects</h1>
+
+    <!-- Sprite Editor Project -->
+    <div class="project-card">
+        <img src="assets/sprite-editor-preview.jpg" alt="Sprite Editor">
+        <div class="overlay">
+            <button class="view-btn" onclick="showModal('sprite-editor')">View</button>
+        </div>
+    </div>
+
+    <!-- Portfolio Website Project -->
+    <div class="project-card">
+        <img src="assets/portfolio-preview.jpg" alt="Portfolio Website">
+        <div class="overlay">
+            <button class="view-btn" onclick="showModal('portfolio')">View</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="sprite-editor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sprite-editor')">&times;</span>
+            <h2>Sprite Editor</h2>
+            <p>A sprite editor tool built using Qt and C++ for game development.</p>
+        </div>
+    </div>
+
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('portfolio')">&times;</span>
+            <h2>Portfolio Website</h2>
+            <p>My personal website built with HTML, CSS, and JavaScript.</p>
+            <a href="https://your-portfolio-website.com" target="_blank" class="modal-button">Visit Website</a>
+            <a href="https://github.com/your-repo/portfolio" target="_blank" class="modal-button">View Code</a>
+        </div>
+    </div>
+
+    <script>
+        function showModal(projectId) {
+            document.getElementById(`${projectId}-modal`).style.display = 'block';
+        }
+
+        function closeModal(projectId) {
+            document.getElementById(`${projectId}-modal`).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
