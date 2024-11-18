@@ -44,12 +44,12 @@
 
 .timeline-date {
     font-weight: bold;
-    color: #6a5acd;
+    color: #9688ee;
     margin-bottom: 5px;
 }
 
 .timeline-content {
-    background: #f4f4f4;
+    background: #402878;
     padding: 10px 15px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -110,12 +110,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
+/*back home button set up (currently for cv.html)*/
 .back-to-home {
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: purple;
+    color: #c87be2;
     text-decoration: none;
 }
 
