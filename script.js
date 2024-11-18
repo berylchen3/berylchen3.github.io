@@ -13,6 +13,17 @@ function showModal(projectId) {
 //This is the funciton for projects page to close the project modal
 function closeModal(projectId) {
     document.getElementById(`${projectId}-modal`).style.display = 'none';
+
+    // Pause video when closing the modal
+    const video = document.querySelector('#video-container video');
+    if (video) {
+        video.pause();
+    }
+}
+
+function showVideo() {
+    const videoContainer = document.getElementById('video-container');
+    videoContainer.style.display = 'block'; // Show the video container
 }
 
 window.addEventListener('click', function(event) {
