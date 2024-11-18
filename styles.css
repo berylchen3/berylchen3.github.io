@@ -111,3 +111,14 @@
 }
 
 
+.back-to-home {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: purple;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    text-decoration: underline;
+}
