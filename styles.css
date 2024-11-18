@@ -55,4 +55,54 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Modal and Overlay Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+}
+
+/* Close button style */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal a {
+    display: block;
+    margin-top: 10px;
+    color: #2b1a9f;
+    text-decoration: none;
+}
+
+.modal-button {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background-color: #6a5acd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.modal-button:hover {
+    background-color: #82c5ee;
+}
+
 
