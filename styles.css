@@ -16,11 +16,11 @@
 }
 
 #contact-modal a {
-    color: #5a3d99;
+    color: #4c2996;
 }
 
 #contact-modal a:hover {
-    color: #7b5db3;
+    color: #a072f6;
 }
 
 .about-photo {
@@ -54,3 +54,5 @@
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+

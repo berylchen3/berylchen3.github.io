@@ -64,7 +64,7 @@
         }
 
         .view-btn:hover {
-            background: #48b1f3;
+            background: #82c5ee;
         }
 
         .modal {
@@ -97,7 +97,7 @@
         .modal a {
             display: block;
             margin-top: 10px;
-            color: #6a5acd;
+            color: #2b1a9f;
             text-decoration: none;
         }
 
@@ -112,7 +112,7 @@
         }
 
         .modal-button:hover {
-            background-color: #48b1f3;
+            background-color: #82c5ee;
         }
     </style>
 </head>
@@ -140,7 +140,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('sprite-editor')">&times;</span>
             <h2>Sprite Editor</h2>
-            <p>A sprite editor tool built using Qt and C++ for game development.</p>
+            <p>A sprite editor tool built using Qt and C++ for game development. </p>
         </div>
     </div>
 
@@ -149,12 +149,12 @@
             <span class="close" onclick="closeModal('portfolio')">&times;</span>
             <h2>Portfolio Website</h2>
             <p>My personal website built with HTML, CSS, and JavaScript.</p>
-            <a href="https://your-portfolio-website.com" target="_blank" class="modal-button">Visit Website</a>
-            <a href="https://github.com/your-repo/portfolio" target="_blank" class="modal-button">View Code</a>
+            <a href="https://berylchen3.github.io/" target="_blank" class="modal-button">Visit Website</a>
+            <a href="https://github.com/berylchen3/berylchen3.github.io" target="_blank" class="modal-button">View Code</a>
         </div>
     </div>
 
-    <script>
+    <script src="script.js">
         function showModal(projectId) {
             document.getElementById(`${projectId}-modal`).style.display = 'block';
         }
@@ -163,5 +163,7 @@
             document.getElementById(`${projectId}-modal`).style.display = 'none';
         }
     </script>
+
+    <a href="index.html">Back to Home</a> <!--Link back to HomePage-->
 </body>
 </html>
