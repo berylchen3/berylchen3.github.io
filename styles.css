@@ -62,7 +62,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
     padding: 20px;
     width: 400px;
@@ -115,7 +115,8 @@
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: #c87be2;
+    color: #6a5acd;
+    font-size: 1.2rem;
     text-decoration: none;
 }
 
