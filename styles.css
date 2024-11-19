@@ -23,6 +23,32 @@
     color: #a072f6;
 }
 
+.social-icons {
+    position: fixed; /* Fixed position on screen */
+    left: 20px; /* Distance from the left side */
+    top: 50%; /* Vertically centered */
+    transform: translateY(-50%);
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical icon alignment */
+    gap: 10px; /* Space between icons */
+}
+
+.social-icons a img {
+    width: 50px; /* Icon width */
+    height: 50px; /* Icon height */
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.social-icons a.linkedin img {
+    width: 75px; /* Adjust LinkedIn icon size */
+    height: 75px; /* Adjust LinkedIn icon size */
+}
+
+
+.social-icons a img:hover {
+    transform: scale(1.1); /* Enlarge on hover */
+}
+
 .about-photo {
     width: 300px;
     height: auto;
