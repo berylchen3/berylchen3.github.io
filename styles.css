@@ -81,6 +81,56 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+
+
+/* Set up for skills section under about me page */
+.skills-section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.category {
+    margin-bottom: 30px;
+}
+
+.category h3 {
+    color: #c87be2;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.icons img {
+    border-radius: 0;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    margin: 10px;
+}
+
+.icons img:hover {
+    transform: scale(1.2); /* Mouse hover set up */
+    cursor: pointer;
+}
+
+.python-logo {
+    max-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.python-logo:hover {
+    transform: scale(1.2);
+}
+
+
+
+
 /* Modal and Overlay Styles */
 .modal {
     display: none;
