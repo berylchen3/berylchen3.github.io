@@ -1,122 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            background-color: #1e1e2f;
-            color: #bca9d3;
-            padding: 20px;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Bingying Wang</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Rainbow ink background -->
+    <canvas id="bgCanvas"></canvas>
 
-        h1 {
-            font-size: 2.5rem;
-            color: #6a5acd;
-        }
+    <div class="page">
+      <header class="site-header">
+        <div class="header-content">
+          <img
+            src="assets/image3.jpg"
+            alt="Bingying's Photo"
+            class="avatar"
+          />
 
-        h2{
-            color: #c87be2;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
-        img {
-            width: 200px;
-            border-radius: 50%;
-            margin-top: 20px;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #6a5acd;
-            font-size: 1.2rem;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <h1>About Me</h1>
-    <img src="assets/image2.jpg" alt="My Photo" class="about-photo">
-    <p>Hi, I'm Bingying Wang, a Junior Computer Science student at the University of Utah. I have a passion for coding, problem-solving, and creating impactful projects.</p>
-    <p>When I'm not coding, I enjoy exploring new places, watching movies, and chatting with friends.</p>
-    <p>Now I am learning front-end skills and trying to develop different websites.</p>
-
-    <h2>My Journey</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-date">August 2021</div>
-            <div class="timeline-content">Enrolled at the University of Utah</div>
+          <div class="hero-text">
+            <h1 class="name">Bingying Wang</h1>
+            <h2 class="subtitle">
+              Computer Science student @ University of Utah
+            </h2>
+            <p class="tagline">
+              Interested in reinforcement learning, robotics, and embodied AI.
+            </p>
+          </div>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-date">2022</div>
-            <div class="timeline-content">Started studying Computer Science</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">August 2023</div>
-            <div class="timeline-content">Became a Teaching Assistant (TA) for the first time</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">Fall 2023 & Spring 2024</div>
-            <div class="timeline-content">Taught CS1420 and CS2420 courses</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">May 2024</div>
-            <div class="timeline-content">Started as a Research Assistant (RA) at University of Utah, working on the CHPC Security project</div>
-        </div>
+
+        <!-- about me -->
+        <nav class="site-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">home</a></li>
+            <li><a href="about.html" class="nav-link active">about me</a></li>
+            <li><a href="cv.html" class="nav-link">cv</a></li>
+            <li><a href="projects.html" class="nav-link">projects</a></li>
+            <li>
+              <a
+                href="javascript:void(0);"
+                class="nav-link"
+                onclick="openContactModal()"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- About content -->
+      <main class="container main-content">
+        <!-- self introduction -->
+        <section class="card">
+          <h2>About Me</h2>
+          <p>
+            I am a junior undergraduate student in Computer Science at the
+            University of Utah, with a minor in Mathematics. My primary
+            interests are in reinforcement learning, robotic manipulation, and
+            AI systems that can help people in the real world.
+          </p>
+          <p>
+            Recently, I have been working on reinforcement learning for robotic
+            manipulation in the LL4MA Lab and on a security and user-behavior analysis project in collaboration
+            with the Center for High Performance Computing (CHPC). I also enjoy
+            teaching and have served as a teaching assistant for core CS
+            courses.
+          </p>
+        </section>
+
+        <!-- education -->
+        <section class="card">
+          <h2>Education</h2>
+          <p>
+            <strong>University of Utah</strong><br />
+            B.S. in Computer Science, Minor in Mathematics<br />
+            Aug. 2021 – May 2026 (Expected)
+          </p>
+          <p>
+            <em>Honors &amp; Awards:</em> Academic Excellence Scholarship;
+            Dean’s List (multiple semesters).
+          </p>
+        </section>
+
+        <!-- research and project -->
+        <section class="card">
+          <h2>Research &amp; Selected Projects</h2>
+
+          <h3>Reinforcement Learning for Robotic Manipulation</h3>
+          <p class="timeline-date">LL4MA Lab, Kahlert School of Computing &mdash; Feb. 2025 – Present</p>
+          <p>
+            Designing and implementing custom Gymnasium environments for the
+            Franka Panda robotic arm in PyBullet, focusing on pick-and-place
+            manipulation. I train Soft Actor-Critic (SAC) policies with dense
+            reward shaping and domain randomization, and I am exploring
+            hierarchical control by separating grasping and placement policies
+            coordinated by a higher-level switching policy.
+          </p>
+
+          <h3>CHPC Security &amp; User Behavior Analysis</h3>
+          <p class="timeline-date">
+            Center for High Performance Computing &mdash; May 2024 – Aug. 2024
+          </p>
+          <p>
+            Assisted in a security study involving CHPC users by designing
+            surveys, cleaning and analyzing user log data, and combining Python
+            scripts with SQL-based aggregation. The goal was to better
+            understand user behaviors and support the design of robust security
+            measures.
+          </p>
+
+          <h3>Vector Golf &mdash; Educational App Development</h3>
+          <p class="timeline-date">
+            Kahlert School of Computing &mdash; Aug. 2024 – Dec. 2024
+          </p>
+          <p>
+            Implemented core gameplay logic in C++ and Qt for an educational
+            physics game that teaches vector concepts. I worked on converting
+            user input vectors into ball motion in a Box2D-based environment,
+            designed interactions between the ball and the world, and added
+            feedback effects such as flag animation and particle effects.
+          </p>
+        </section>
+
+        <!-- intern/training -->
+        <section class="card">
+          <h2>Training &amp; Teaching Experience</h2>
+
+          <h3>Software Assistant Engineer Training</h3>
+          <p class="timeline-date">
+            Tongji Architectural Design (Group) Co., Ltd. &mdash; May 2025 – Aug. 2025
+          </p>
+          <p>
+            Participated in the “Shanghai Digital Waterway Initiative” by
+            developing backend services in Java (Spring Boot) for a
+            cloud-based urban planning platform, designing RESTful APIs, and
+            helping optimize multi-source data integration pipelines.
+          </p>
+
+          <h3>Teaching Assistant &mdash; Kahlert School of Computing</h3>
+          <p class="timeline-date">
+            University of Utah &mdash; Aug. 2023 – May 2024
+          </p>
+          <p>
+            Supported large undergraduate classes in Data Structures &amp;
+            Algorithms and Accelerated Object-Oriented Programming. I guided
+            students through problem-solving sessions, helped prepare assignment
+            and exam materials, and worked with instructors to address learning
+            challenges.
+          </p>
+        </section>
+
+        <!-- skills -->
+        <section class="card">
+          <h2>Skills Snapshot</h2>
+          <p>
+            <strong>Programming:</strong> Python, Java, C++, C, JavaScript, R,
+            C#, Ruby, Racket
+          </p>
+          <p>
+            <strong>Technical:</strong> Machine Learning &amp; RL (Python),
+            Data Analytics (SQL, MATLAB), Frontend (HTML, CSS, JavaScript),
+            AI model development, Physics engines (Unity, Qt/Box2D)
+          </p>
+          <p>
+            <strong>Tools:</strong> Linux, Git, Docker, VS Code, WordPress,
+            JetBrains IDEs
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">© 2025 Bingying Wang</div>
+      </footer>
     </div>
 
-    <h2>Skills</h2>
-    <div class="skills-section">
-        <div class="category">
-            <h3>Programming Languages</h3>
-            <div class="icons">
-                <img src="assets/icons/python.png" alt="Python" class="python-logo">
-                <img src="assets/icons/cpp.png" alt="C++">
-                <img src="assets/icons/java.png" alt="Java">
-                <img src="assets/icons/javascript.png" alt="JavaScript">
-            </div>
-        </div>
-        <div class="category">
-            <h3>Developer Tools</h3>
-            <div class="icons">
-                <img src="assets/icons/git.png" alt="Git">
-                <img src="assets/icons/docker.png" alt="Docker">
-                <img src="assets/icons/VisualStudioCode.png" alt="Visual Studio Code">
-                <img src="assets/icons/WordPress.png" alt="WordPress">
-            </div>
-        </div>
+    <!-- social icons -->
+    <div class="social-icons">
+      <a href="https://github.com/berylchen3" target="_blank">
+        <img src="assets/github-icon.png" alt="GitHub" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/bingying-wang3/"
+        target="_blank"
+        class="linkedin"
+      >
+        <img src="assets/linkedin-icon.png" alt="LinkedIn" />
+      </a>
     </div>
 
-    <!-- <h2>Hobbies & Interests</h2>
-    <ul>
-        <li>Drawing</li>
-        <li>Coding</li>
-    </ul> -->
+    <!-- Contact modal -->
+    <div id="modal-overlay" onclick="closeContactModal()"></div>
+    <div id="contact-modal">
+      <h2>Contact Me</h2>
+      <p>Address: Kahlert School of Computing, Salt Lake City, UT</p>
+      <p>
+        Email:
+        <a href="mailto:wangbingying3@gmail.com">wangbingying3@gmail.com</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/bingying-wang3/"
+          target="_blank"
+          >View Profile</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/berylchen3" target="_blank"
+          >View Profile</a
+        >
+      </p>
+      <button type="button" onclick="closeContactModal()">Close</button>
+    </div>
 
-    <p>Still working on this page...</p>
-
-    <a href="index.html">Back to Home</a> <!--Link back to HomePage-->
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,190 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            background-color: #1e1e2f;
-            color: white;
-            padding: 20px;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects – Bingying Wang</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Rainbow ink background -->
+    <canvas id="bgCanvas"></canvas>
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+    <div class="page">
+      <!-- 头部 + 导航，与 index/about 保持一致 -->
+      <header class="site-header">
+        <div class="header-content">
+          <img
+            src="assets/image3.jpg"
+            alt="Bingying's Photo"
+            class="avatar"
+          />
 
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #6a5acd;
-            font-size: 1.2rem;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .project-card {
-            position: relative;
-            display: inline-block;
-            margin: 20px;
-            width: 300px;
-            height: 200px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .project-card:hover .overlay {
-            opacity: 1;
-        }
-
-        .view-btn {
-            background: #6a5acd;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .view-btn:hover {
-            background: #82c5ee;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            color: black;
-            padding: 20px;
-            width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-
-        .modal-content {
-            position: relative;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .modal a {
-            display: block;
-            margin-top: 10px;
-            color: #2b1a9f;
-            text-decoration: none;
-        }
-
-        .modal-button {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 10px 15px;
-            background-color: #6a5acd;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .modal-button:hover {
-            background-color: #82c5ee;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #443c75;
-        }
-    </style>
-</head>
-<body>
-    <h1>Projects</h1>
-
-    <!-- Sprite Editor Project -->
-    <div class="project-card">
-        <img src="assets/sprite-editor-preview.jpg" alt="Sprite Editor">
-        <div class="overlay">
-            <button class="view-btn" onclick="showModal('sprite-editor')">View</button>
+          <div class="hero-text">
+            <h1 class="name">Bingying Wang</h1>
+            <h2 class="subtitle">
+              Computer Science student @ University of Utah
+            </h2>
+            <p class="tagline">
+              Interested in reinforcement learning, robotics, and embodied AI.
+            </p>
+          </div>
         </div>
+
+        <nav class="site-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">home</a></li>
+            <li><a href="about.html" class="nav-link">about me</a></li>
+            <li><a href="cv.html" class="nav-link">cv</a></li>
+            <li><a href="projects.html" class="nav-link active">projects</a></li>
+            <li>
+              <a
+                href="javascript:void(0);"
+                class="nav-link"
+                onclick="openContactModal()"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="container main-content">
+        <!-- 简短介绍 -->
+        <section class="card">
+          <h2>Projects</h2>
+          <p>
+            Below are a selection of projects that reflect my interests in
+            reinforcement learning, robotics, systems, and educational tools.
+          </p>
+        </section>
+
+        <!-- 1. RL 机械臂项目 -->
+        <section class="card">
+          <h3>Reinforcement Learning for Franka Panda Pick-and-Place</h3>
+          <p class="timeline-date">
+            Python, PyBullet, Gymnasium, Soft Actor-Critic (SAC)
+          </p>
+          <p>
+            I design a custom Gymnasium environment for a Franka Panda robotic
+            arm in PyBullet to perform pick-and-place tasks. The project focuses
+            on reward shaping, curriculum design, and domain randomization so
+            that policies can generalize across object positions and
+            perturbations. I am currently exploring hierarchical control by
+            separating grasping and placement policies and coordinating them
+            with a higher-level switching policy.
+          </p>
+          <p>
+            This project is part of my research in the LL4MA Lab at the
+            Kahlert School of Computing.
+          </p>
+          <!-- 可放一张 / 动图演示 -->
+          <p style="margin-top: 0.8rem;">
+            <img
+              src="assets/rl-robot-arm.gif"
+              alt="Franka Panda RL pick-and-place demo"
+              class="about-photo"
+              style="max-width: 100%; border-radius: 10px;"
+            />
+          </p>
+
+          
+          <p>
+            <a href="https://github.com/berylchen3/rl-pickplace" target="_blank" class="modal-button">
+              View Code
+            </a>
+          </p>
+         
+        </section>
+
+        <!-- 2. Sprite Editor -->
+        <section class="card">
+          <h3>Sprite Editor for 2D Game Development</h3>
+          <p class="timeline-date">C++, Qt, Team Project</p>
+          <p>
+            A desktop sprite editor built in C++ and Qt that supports layer
+            management, onion-skinning, and animated preview for pixel art
+            workflows. I implemented core UI interactions and helped design the
+            animation preview and onion-skin features to support iterative game
+            asset creation.
+          </p>
+          <p>
+            This project was developed as a team; my teammates include Eden
+            Parish, Isaac Koizumi, Nate Fierro, Ethan Nguyen, and Munkh-Orgil
+            Purevdorj.
+          </p>
+          <p style="margin-top: 0.8rem;">
+            <img
+              src="assets/sprite-editor-preview.jpg"
+              alt="Sprite Editor preview"
+              class="about-photo"
+              style="max-width: 100%; border-radius: 10px;"
+            />
+          </p>
+          <p>
+            <button
+              type="button"
+              class="modal-button"
+              onclick="showProjectModal('sprite-editor')"
+            >
+              Watch Demo
+            </button>
+          </p>
+        </section>
+
+        <!-- 3. Portfolio Website -->
+        <section class="card">
+          <h3>Personal Portfolio Website</h3>
+          <p class="timeline-date">HTML, CSS, JavaScript</p>
+          <p>
+            A personal academic website built with a custom design featuring an
+            animated “ink-style” rainbow background, responsive layout, and
+            separate pages for my CV, projects, and background. The goal is to
+            present my research interests and technical work in a clean and
+            visually distinctive way.
+          </p>
+          <p style="margin-top: 0.8rem;">
+            <img
+              src="assets/portfolio-preview.jpg"
+              alt="Portfolio website preview"
+              class="about-photo"
+              style="max-width: 100%; border-radius: 10px;"
+            />
+          </p>
+          <p>
+            <a
+              href="https://berylchen3.github.io/"
+              target="_blank"
+              class="modal-button"
+              >Visit Website</a
+            >
+            <a
+              href="https://github.com/berylchen3/berylchen3.github.io"
+              target="_blank"
+              class="modal-button"
+              >View Code</a
+            >
+          </p>
+        </section>
+
+        <!-- 4. DS 2500 Data Wrangling Project -->
+        <section class="card">
+          <h3>Data Wrangling and Exploratory Analysis (DS 2500)</h3>
+          <p class="timeline-date">Python, Pandas, Data Visualization</p>
+          <p>
+            Course project for DS 2500 involving data wrangling and exploratory
+            data analysis. I cleaned and combined real-world datasets, performed
+            descriptive statistics, and produced visualizations to study trends
+            and patterns in the data. The project emphasized reproducible
+            analysis and clear communication of findings.
+          </p>
+          <p>
+            You can view the full project report and a writing sample below:
+          </p>
+          <p>
+            <a
+              href="assets/ds2500_project_report.pdf"
+              target="_blank"
+              class="modal-button"
+              >View Project Report (PDF)</a
+            >
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">© 2025 Bingying Wang</div>
+      </footer>
     </div>
 
-    <!-- Portfolio Website Project -->
-    <div class="project-card">
-        <img src="assets/portfolio-preview.jpg" alt="Portfolio Website">
-        <div class="overlay">
-            <button class="view-btn" onclick="showModal('portfolio')">View</button>
-        </div>
+    <!-- 左侧社交图标 -->
+    <div class="social-icons">
+      <a href="https://github.com/berylchen3" target="_blank">
+        <img src="assets/github-icon.png" alt="GitHub" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/bingying-wang3/"
+        target="_blank"
+        class="linkedin"
+      >
+        <img src="assets/linkedin-icon.png" alt="LinkedIn" />
+      </a>
     </div>
 
-    <!-- Modals -->
+    <!-- Contact modal -->
+    <div id="modal-overlay" onclick="closeContactModal()"></div>
+    <div id="contact-modal">
+      <h2>Contact Me</h2>
+      <p>Address: Kahlert School of Computing, Salt Lake City, UT</p>
+      <p>
+        Email:
+        <a href="mailto:wangbingying3@gmail.com">wangbingying3@gmail.com</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/bingying-wang3/"
+          target="_blank"
+          >View Profile</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/berylchen3" target="_blank"
+          >View Profile</a
+        >
+      </p>
+      <button type="button" onclick="closeContactModal()">Close</button>
+    </div>
+
+    <!-- Sprite Editor Modal（沿用你原来的 video 逻辑） -->
     <div id="sprite-editor-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('sprite-editor')">&times;</span>
-            <h2>Sprite Editor</h2>
-            <p>A sprite editor tool built using Qt and C++ for game development. </p>
-            <p>This is a group project and my awesome team members are:</p>
-            <p>EDEN PARISH, ISAAC KOIZUMI, NATE FIERRO, ETHAN NGUYEN, MUNKH-ORGIL PUREVDORJ</p>
-            <button class="modal-button" onclick="showVideo()">Watch Video</button>
-            <!-- Hidden video container -->
-            <div id="video-container" style="display: none; margin-top: 20px;">
-                <video width="100%" controls>
-                    <source src="assets/sprite-editor-demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+      <div class="modal-content">
+        <span class="close" onclick="closeProjectModal('sprite-editor')"
+          >&times;</span
+        >
+        <h2>Sprite Editor Demo</h2>
+        <p>
+          A brief demonstration of the sprite editor features, including
+          drawing, layer control, and animation preview.
+        </p>
+        <div id="video-container" style="margin-top: 12px;">
+          <video width="100%" controls>
+            <source src="assets/sprite-editor-demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
-    </div>
-
-    <div id="portfolio-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('portfolio')">&times;</span>
-            <h2>Portfolio Website</h2>
-            <p>My personal website built with HTML, CSS, and JavaScript.</p>
-            <a href="https://berylchen3.github.io/" target="_blank" class="modal-button">Visit Website</a>
-            <a href="https://github.com/berylchen3/berylchen3.github.io" target="_blank" class="modal-button">View Code</a>
-        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-
-    <p>More projects are coming...</p>
-
-    <a href="index.html">Back to Home</a> <!--Link back to HomePage-->
-</body>
+  </body>
 </html>
