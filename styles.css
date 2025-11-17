@@ -22,6 +22,9 @@ body {
   z-index: -1;
   pointer-events: none;
   background: #050816;
+  z-index: -1;          
+  pointer-events: none; 
+  background-color: #050816; 
 }
 
 .page {
