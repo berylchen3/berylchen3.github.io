@@ -1,229 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingying's Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            /*background: rgb(47, 46, 46);*/
-            /*background: linear-gradient(135deg, #1e1e2f, #15151f);*/
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingying Wang</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Rainbow gradient background -->
+    <canvas id="bgCanvas"></canvas>
 
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #1e1e2f;
-        }
+    <div class="page">
+      <header class="site-header">
+        <div class="header-content">
+          <img
+            src="assets/image3.jpg"
+            alt="Bingying's Photo"
+            class="avatar"
+          />
 
-        h1 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #1e90ff, #ff69b4);
-            background-size: 200% 200%;
-            animation: gradient-animation 5s infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @keyframes gradient-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        h2 {           
-            /*background: linear-gradient(135deg, #ff4500, #32cd32);*/
-            background: linear-gradient(135deg, #ff7f50, #6495ed);
-            background-size: 200% 200%;
-            animation: gradient-animation 5s infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-
-        img {
-            width: 280px;
-            border-radius: 60%;
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: none; /*delete the points before <li>*/
-            padding: 0;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #cccccc;
-        }
-
-        a {
-            color: lightblue;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        #contact-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgb(216, 213, 246);
-            color: black;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 100;
-            border-radius: 8px;
-        }
-
-        #contact-modal button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #4633c1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #contact-modal button:hover {
-            background-color: #48b1f3;
-        }
-
-        #modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 99;
-        }
-    </style>
-
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-</head>
-<body>
-
-    <div id="particles-js"></div>
-
-    <h1>Bingying Wang</h1>
-    <h2>CS student at University of Utah</h2>
-
-    <img src="assets/image1.jpg" alt="Bingying's Photo">
-
-    <header>
-        <h2>Welcome to my personal website</h2>
-        <ul>
-            <li><a href="about.html">about me</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="projects.html">projects</a></li>
-            <li><a href="javascript:void(0);" onclick="showModal()">contact</a></li>
-        </ul>
-        <!-- <p>This website is still in progress! Please wait...</p> -->
-
-        <div id="modal-overlay" onclick="closeModal()"></div>
-        <div id="contact-modal">
-            <h2>Contact Me!</h2>
-            <p>Address: Kahlert School of Computing, Salt Lake City, UT</p>
-            <p>Email: wangbingying3@gmail.com</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/bingying-wang3/" target="_blank">View Profile</a></p>
-            <p>GitHub: <a href="https://github.com/berylchen3" target="_blank">View Profile</a></p>
-            <button onclick="closeModal()">Close</button>
+          <div class="hero-text">
+            <h1 class="name">Bingying Wang</h1>
+            <h2 class="subtitle">
+              Computer Science student @ University of Utah
+            </h2>
+            <p class="tagline">
+              Interested in reinforcement learning, robotics, and embodied AI.
+            </p>
+          </div>
         </div>
 
-        <div class="social-icons">
-            <a href="https://github.com/berylchen3" target="_blank">
-                <img src="assets/github-icon.png" alt="GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/bingying-wang3/" target="_blank" class="linkedin">
-                <img src="assets/linkedin-icon.png" alt="LinkedIn">
-            </a>
-        </div>
-        <!-- <nav>
-            <a href="#about">about me</a><br>
-            <a href="#projects">projects</a><br>
-            <a href="#contact">contact</a>
-        </nav> -->
+        <nav class="site-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">home</a></li>
+            <li><a href="about.html" class="nav-link">about me</a></li>
+            <li><a href="cv.html" class="nav-link">cv</a></li>
+            <li><a href="projects.html" class="nav-link">projects</a></li>
+            <li>
+              <a
+                href="javascript:void(0);"
+                class="nav-link"
+                onclick="openContactModal()"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-        <script>
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": {
-                        "value": 100, /* Amount of particles */
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#ffffff" /* Color of particles */
-                    },
-                    "shape": {
-                        "type": "circle" /* Shape of particles */
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": true
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true
-                    },
-                    "line_linked": {
-                        "enable": true, /* The connection between particles */
-                        "distance": 150,
-                        "color": "#ffffff",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 2 /* Speed of particles */
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "window",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "repulse" /* When the mouse hovers, the particle avoids */
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push" /* When the mouse clicked, more particles occur */
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
+      <main class="container main-content">
+        <section class="card">
+          <h2>Welcome</h2>
+          <p>
+            Welcome to my personal website. I am an undergraduate student in
+            Computer Science at the University of Utah, with a strong interest
+            in reinforcement learning, robot manipulation, and AI systems that
+            can help people in the real world.
+          </p>
+          <p>
+            You can learn more about my background on the
+            <a href="about.html">about</a> page, find my detailed resume on the
+            <a href="cv.html">cv</a> page, and explore my technical work on the
+            <a href="projects.html">projects</a> page.
+          </p>
+        </section>
+      </main>
 
+      <footer class="site-footer">
+        <div class="container">© 2025 Bingying Wang</div>
+      </footer>
+    </div>
 
-            function showModal() {
-            document.getElementById('contact-modal').style.display = 'block';
-            document.getElementById('modal-overlay').style.display = 'block';
-            }
+    <div class="social-icons">
+      <a href="https://github.com/berylchen3" target="_blank">
+        <img src="assets/github-icon.png" alt="GitHub" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/bingying-wang3/"
+        target="_blank"
+        class="linkedin"
+      >
+        <img src="assets/linkedin-icon.png" alt="LinkedIn" />
+      </a>
+    </div>
 
+    <!-- Contact modal -->
+    <div id="modal-overlay" onclick="closeContactModal()"></div>
+    <div id="contact-modal">
+      <h2>Contact Me</h2>
+      <p>Address: Kahlert School of Computing, Salt Lake City, UT</p>
+      <p>
+        Email:
+        <a href="mailto:wangbingying3@gmail.com">wangbingying3@gmail.com</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/bingying-wang3/"
+          target="_blank"
+          >View Profile</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/berylchen3" target="_blank"
+          >View Profile</a
+        >
+      </p>
+      <button type="button" onclick="closeContactModal()">Close</button>
+    </div>
 
-            function closeModal() {
-                document.getElementById('contact-modal').style.display = 'none';
-                document.getElementById('modal-overlay').style.display = 'none';
-            }
-        </script>
-
-    </header>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
