@@ -21,7 +21,10 @@ if (bgCanvas) {
   let targetX = mouseX;
   let targetY = mouseY;
 
+  let hasMoved = false;
+
   window.addEventListener("mousemove", (e) => {
+    hasMoved = true;
     targetX = e.clientX;
     targetY = e.clientY;
   });
@@ -138,13 +141,15 @@ if (bgCanvas) {
     mouseX += (targetX - mouseX) * 0.08;
     mouseY += (targetY - mouseY) * 0.08;
 
-    // create new particles near mouse
-    particleTimer++;
-    if (particleTimer > 1 && particles.length < maxParticles) {
-      const offsetX = (Math.random() - 0.5) * 25;
-      const offsetY = (Math.random() - 0.5) * 25;
-      particles.push(new InkParticle(mouseX + offsetX, mouseY + offsetY));
-      particleTimer = 0;
+    // Only after mouse moved, it will draw particles
+    if (hasMoved) {
+      particleTimer++;
+      if (particleTimer > 1 && particles.length < maxParticles) {
+        const offsetX = (Math.random() - 0.5) * 25;
+        const offsetY = (Math.random() - 0.5) * 25;
+        particles.push(new InkParticle(mouseX + offsetX, mouseY + offsetY));
+        particleTimer = 0;
+      }
     }
 
     // update and draw particles
