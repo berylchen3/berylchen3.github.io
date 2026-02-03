@@ -6,18 +6,62 @@
     <title>My CV</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body{
-            background-color: #ffffff;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h2{
-            color: #c87be2;
+        html, body {
+            height: 100%;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #453cef;
+            padding: 10px 20px;
+            margin: 0;
+        }
+
+        .pdf-container {
+            height: calc(100vh - 50px);
+            width: 100%;
+        }
+
+        .pdf-container embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .back-to-home {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #522ca2;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(200, 123, 226, 0.4);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-home:hover {
+            background: #4235ee;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 164, 226, 0.5);
         }
     </style>
 </head>
 <body>
     <h2>My CV</h2>
-    <embed src="assets/my-cv.pdf" width="100%" height="600px">
+    <div class="pdf-container">
+        <embed src="assets/my-cv.pdf" type="application/pdf">
+    </div>
     <a href="index.html" class="back-to-home">Back to Home</a>
 </body>
 </html>
